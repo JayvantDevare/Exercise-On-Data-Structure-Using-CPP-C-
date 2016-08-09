@@ -1,0 +1,64 @@
+Queue with operations on middle element
+We want to implement a queue which will support following operations. We need all the operations in O(1) time complexity.
+
+1) push( ) which adds an element to the tail of queue.
+2) pop( ) which removes an element from head of queue.
+3) findMiddle( ) which will return middle element of the queue.
+4) deleteMiddle( ) which will deletes the middle element of the queue.
+
+A queue implementation with a different design serves this purpose. Part of the implementation is done to guide you, fill in the appropriate snippets to get a working data structure.  For even size queues, the first of the two middle elements is expected as return value of findMiddle( ).
+
+Note: The grading to this lab is binary. You either get your data structure right or wrong i.e. (10 points or 0 points)
+
+So which data structure to use for implementing this special queue?
+
+If we use a singly linked list, we may need to move the middle pointer up when we push an element and move down when we pop(). In singly linked list, moving middle pointer in both directions is not possible.
+
+So, the idea is to use Doubly Linked List (DLL). We can find middle element in O(1) time by maintaining mid pointer. We can move mid pointer in both directions using previous and next pointers.
+
+Implementation details
+
+You can also use arrays in circular fashion, but for this problem we want you to use doubly linked list.
+
+Most definitions and function definitions are already provided. You need to adhere to them. You can NOT change them.
+
+The function names are self-explanatory. Please take a look at the structs/functions defined and the comments preceding them.
+
+
+Your task
+
+Fill the snippets marked missing in the code and complete the data structure.
+
+Assumptions
+
+1) Queue is created using createMyQueue( ) function only. And all further operations are made using the pointer returned by it ONLY. For example,
+
+ 
+
+struct myQueue *mq = createMyQueue( );
+
+push(mq, 11);
+
+pop(mq);
+
+findMiddle(mq);
+
+ 
+
+2) Queue is made up of integers (int datatype) only.
+
+ 
+
+3) pop( ), findMiddle( ) and deleteMiddle( ) operations are never made if the queue is empty.
+
+ 
+
+(IMPORTANT)
+
+ 
+
+4) findMiddle( ) operation should return the lower in queue middle element in case queue is of even length.
+
+ 
+
+For example - If the queue from head to tail is [1, 2, 3, 4]. findMiddle() should return 2.
